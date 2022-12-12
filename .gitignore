@@ -4,6 +4,7 @@
 # Spring Boot 3
 spring-boot-3/.gradle/
 spring-boot-3/build/
+spring-boot-3/bin/
 
 # RxJava
 rxjava/.gradle/
