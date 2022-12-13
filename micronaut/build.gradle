@@ -1,0 +1,56 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.6.3"
+}
+
+version = "0.1"
+group = "com.beyondcoding"
+
+ext {
+    resilience4jVersion = "1.7.1"
+    rxjavaVersion = "3.1.5"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor("io.micronaut:micronaut-http-validation")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.reactivex.rxjava3:rxjava:${rxjavaVersion}")
+    implementation("io.micronaut:micronaut-validation")
+    implementation("io.github.resilience4j:resilience4j-circuitbreaker:${resilience4jVersion}")
+    implementation("io.github.resilience4j:resilience4j-ratelimiter:${resilience4jVersion}")
+    implementation("io.github.resilience4j:resilience4j-retry:${resilience4jVersion}")
+    implementation("io.github.resilience4j:resilience4j-bulkhead:${resilience4jVersion}")
+    implementation("io.github.resilience4j:resilience4j-consumer:${resilience4jVersion}")
+    implementation("io.github.resilience4j:resilience4j-micrometer:${resilience4jVersion}")
+    implementation("io.github.resilience4j:resilience4j-micronaut:${resilience4jVersion}")
+    implementation("io.github.resilience4j:resilience4j-rxjava3:${resilience4jVersion}")
+}
+
+
+application {
+    mainClass.set("com.beyondcoding.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.beyondcoding.*")
+    }
+}
+
+
+

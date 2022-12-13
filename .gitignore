@@ -6,6 +6,11 @@ spring-boot-3/.gradle/
 spring-boot-3/build/
 spring-boot-3/bin/
 
+# Micronaut
+micronaut/.gradle/
+micronaut/build/
+micronaut/bin/
+
 # RxJava
 rxjava/.gradle/
 rxjava/build/
