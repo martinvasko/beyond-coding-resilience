@@ -1,14 +1,56 @@
-## Micronaut 3.7.4 Documentation
+## Micronaut 3.8.1 Documentation
 
-- [User Guide](https://docs.micronaut.io/3.7.4/guide/index.html)
-- [API Reference](https://docs.micronaut.io/3.7.4/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/3.7.4/guide/configurationreference.html)
+- [User Guide](https://docs.micronaut.io/3.8.1/guide/index.html)
+- [API Reference](https://docs.micronaut.io/3.8.1/api/index.html)
+- [Configuration Reference](https://docs.micronaut.io/3.8.1/guide/configurationreference.html)
 - [Micronaut Guides](https://guides.micronaut.io/index.html)
 ---
 
-- [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
-## Feature http-client documentation
+- [Azure Functions Plugin for Gradle](https://plugins.gradle.org/plugin/com.microsoft.azure.azurefunctions)
+# Micronaut and Azure Function
 
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+## Prerequisites
+
+- Latest [Function Core Tools](https://aka.ms/azfunc-install)
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/)
+
+## Setup
+
+```cmd
+az login
+az account set -s <your subscription id>
+
+## Build Tools
+
+The application's build uses [Azure Functions Plugin for Gradle](https://plugins.gradle.org/plugin/com.microsoft.azure.azurefunctions).
+## Running the function locally
+
+```cmd
+./gradlew clean azureFunctionsRun
+```
+
+And visit http://localhost:7071/api/demo
+
+## Deploying the function
+
+To deploy the function run:
+
+```bash
+$ ./gradlew clean azureFunctionsDeploy
+```
+
+
+
+- [Azure Functions Plugin for Gradle](https://plugins.gradle.org/plugin/com.microsoft.azure.azurefunctions)
+## Feature azure-function-http documentation
+
+- [Micronaut Azure Function documentation](https://micronaut-projects.github.io/micronaut-azure/latest/guide/index.html#azureHttpFunctions)
+
+
+## Feature azure-function documentation
+
+- [Micronaut Azure Function documentation](https://micronaut-projects.github.io/micronaut-azure/latest/guide/index.html#simpleAzureFunctions)
+
+- [https://docs.microsoft.com/azure](https://docs.microsoft.com/azure)
 
 
