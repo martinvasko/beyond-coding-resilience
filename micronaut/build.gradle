@@ -31,8 +31,8 @@ java {
 
 tasks {
     azurefunctions {
-        resourceGroup = "java-functions-group"
-        appName = "demo"
+        resourceGroup = "ml-resource-group"
+        appName = "beyond-coding-demo"
         pricingTier = "Consumption"
         region = "westus"
         runtime {

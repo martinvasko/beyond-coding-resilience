@@ -53,4 +53,12 @@ $ ./gradlew clean azureFunctionsDeploy
 
 - [https://docs.microsoft.com/azure](https://docs.microsoft.com/azure)
 
+## Possible issues
 
+### Error: 
+
+Failed to proceed, website with given name demo already exists.
+
+## Solution
+
+You need to adapt the appName in `build.gradle` to make it unique.
