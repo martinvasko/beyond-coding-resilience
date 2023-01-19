@@ -9,5 +9,6 @@ resilience4j/app/bin/
 resilience4j/app/build/
 
 # Micronaut
+micronaut/bin/
 micronaut/.gradle/
 micronaut/build/
